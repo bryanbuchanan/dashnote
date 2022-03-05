@@ -1,0 +1,252 @@
+﻿/* Content Stylesheet */
+
+
+
+
+/* Type & Headings
+----------------------------------------------------------------------- */
+		
+
+	body {
+	
+		color: #333;
+		font: 500 12px/17px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: subpixel-antialiased;
+        text-rendering: optimizeLegibility;
+
+		}
+		
+		
+/* Links */
+
+
+	a {
+	
+		color: #333;
+		text-decoration: none;
+		cursor: default;
+	
+		}
+		
+		
+/* NOTES
+----------------------------------------------------------------------- */
+
+		
+	ul.notes {
+	
+		clear: both;
+		overflow: auto;
+		margin-bottom: -13px;
+
+		}
+		
+	ul.notes li {
+	
+		display: block;
+	
+		}
+		
+	ul.notes .hidden {
+	
+		display: none;
+	
+		}
+		
+	ul.notes a {
+	
+		display: block;
+		padding: 10px 10px 10px 20px;
+		border-bottom: 1px solid rgba(0,0,0,.05);
+		cursor: default;
+		-webkit-user-select: none;
+		-webkit-transition: background .15s ease-out;
+
+		}
+		
+	ul.notes li:first-child a {
+	
+		padding-top: 15px;
+	
+		}
+		
+	ul.notes a:active strong,
+	ul.notes a:active span,
+	ul.notes a.active strong,
+	ul.notes a.active span,
+	ul.notes .selected a strong,
+	ul.notes .selected a span {
+	
+		color: #fff;
+	
+		}
+		
+	ul.notes a:hover {
+	
+		background: rgba(139,153,170,.2);
+	
+		}
+		
+	body #front ul.notes li a:active,
+	body #front ul.notes li.selected a {
+	
+		background: rgb(139,153,170);
+	
+		}
+		
+	ul.notes strong,
+	ul.notes span {
+	
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	
+		}
+		
+	ul.notes strong {
+	
+		font-size: 13px;
+		margin-bottom: 1px;
+	
+		}
+		
+	ul.notes span {
+	
+		color: #6f7174;
+	
+		}
+		
+	ul.notes div,
+	ul.notes span.version,
+	ul.notes span.syncnum {
+	
+		display: none;
+	
+		}
+		
+		
+/* Pinned & Shared */
+
+
+	ul.notes .shared.pinned strong {
+	
+		padding-left: 35px;
+		background-image: url('../images/pin.png'), url('../images/shared.png');
+		background-repeat: no-repeat, no-repeat;
+		background-position: 0px 2px, 17px 1px;
+		background-size: 12px auto, 12px auto;
+	
+	
+		}
+
+	ul.notes .pinned strong {
+	
+		padding-left: 17px;
+		background: url('../images/pin.png') 0 2px no-repeat;
+		background-size: 12px auto;
+
+		}	
+
+	ul.notes .shared strong {
+	
+		padding-left: 17px;
+		background: url('../images/shared.png') 0 1px no-repeat;
+		background-size: 12px auto;
+	
+		}
+
+	
+/* Note
+----------------------------------------------------------------------- */
+
+		
+	#textarea {
+	
+		color: #333;
+		background: transparent;
+		font: 500 13px/19px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		display: block;
+		clear: both;
+		border: none;
+		outline: none;
+		padding: 20px 20px 100px;
+		resize: none;
+		margin-bottom: -13px;
+		
+		}
+		
+		
+/* Ad
+----------------------------------------------------------------------- */
+
+
+	#ad {
+
+		position: relative;
+		display: block;	
+		width: 100%;
+		padding: 0;
+		background: rgba(0,0,0,.5);
+		min-height: 25px;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: 25px;
+		-webkit-transition: background-color .1s ease-out;
+
+		}
+		
+	#ad:hover {
+	
+		background: rgba(0,0,0,.4);
+	
+		}		
+		
+	#ad a {
+
+		display: block;
+		color: #ccc;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		}
+		
+	#ad span {
+
+		padding: 0 10px 0 20px;
+	
+		}
+		
+	.hide {
+	
+		display: none !important;
+	
+		}
+		
+	#ad .close {
+	
+		display: block;
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: url('../images/a-close.png') center center no-repeat;
+		background-size: 8px auto;
+		-webkit-transition: opacity .2s ease-out;
+		opacity: 0;
+
+		}
+		
+	#ad:hover .close {
+	
+		opacity: .5;
+	
+		}
+		
+	#ad .close:hover {
+	
+		opacity: .9;
+	
+		}

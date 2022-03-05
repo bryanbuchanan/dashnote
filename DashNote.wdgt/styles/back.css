@@ -1,0 +1,145 @@
+﻿/* Backside Stylesheet */
+
+		
+	#back {
+	
+		position: relative;
+		display: none;
+		background: url('../images/reflection.png') 0 0 no-repeat,
+			url('../images/gradient.png') center bottom repeat-x,
+			url('../images/background-back.png') center top;
+		background-size: 457px auto, 21px auto, 216px auto;
+		
+		}
+		
+		
+/* Colors
+---------------------------------------------- */
+		
+		
+	#back > div {
+	
+		
+		color: rgba(255,255,255,.8);
+	
+		}
+		
+	#back > div a {
+	
+		color: rgba(255,255,255,.6);
+		border-bottom: 1px solid;
+	
+		}
+		
+
+/* 
+---------------------------------------------- */
+
+
+	#back > div {
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -111px 0 0 -116px;
+		width: 230px;
+		font-size: 12px;
+		line-height: 16px;
+		border: 2px solid rgba(255,255,255,.3);
+		border-radius: 7px;
+		
+		}
+		
+	h3 {
+
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: bold;
+		padding: 15px 5% 10px;
+		border-bottom: 2px dotted rgba(255,255,255,.3);
+	
+		}
+		
+	h3 small {
+	
+		display: block;
+		font-size: 11px;
+		line-height: 18px;
+	
+		}
+		
+	label {
+	
+		display: block;
+	
+		}
+		
+	input[type="text"],
+	input[type="password"] {
+	
+		font: bold 14px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		padding: 8px 5%;
+		outline: none;
+		border: none;
+		border-bottom: 2px dotted rgba(255,255,255,.3);
+		background: none;
+		display: block;
+		width: 90%;
+		color: #fff;
+	
+		}
+		
+	#done {
+	
+		display: block;
+		background: transparent;
+		padding: 10px 0;
+		border-radius: 0 0 5px 5px;
+		width: 100%;
+		border: none;
+		font: bold 14px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		color: #fff;
+		background: rgba(255,255,255,.1);
+
+		}
+		
+	#done:hover {
+	
+		background: rgba(255,255,255,.2);
+	
+		}
+		
+	
+/* Footer */
+
+
+	footer {
+	
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+	
+		}
+		
+	#resen {
+	
+		display: block;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 19px;
+		height: 23px;
+		margin: 15px auto;
+		background: url('../images/resen.png') no-repeat;
+		background-size: 100% auto;
+		opacity: .3;
+		border: 0 !important;
+	
+		}
+		
+	#resen:hover {
+	
+		opacity: .8;
+	
+		}	

@@ -1,0 +1,582 @@
+﻿/* Layout Stylesheet */
+		
+		
+/* Structural Containers
+----------------------------------------------------------------------- */
+
+		
+	html, body {
+	
+		height: 100%;
+	
+		}
+			
+	body {
+	
+		overflow: hidden;
+			
+		}			
+			
+	#frame {
+	
+		padding: 20px 20px 30px;
+		overflow: hidden;
+	
+		}
+	
+	.panel {
+
+		width: 100%;
+		background: url('../images/bg-top.png') repeat-x,
+			url('../images/gradient.png') center bottom repeat-x,
+			#f2f2f2 url('../images/background.png');
+		background-size: auto auto, 21px auto, 216px auto;
+		border: 2px solid #333;
+		overflow: hidden;
+		border-radius: 11px;
+		-webkit-box-shadow: rgba(0,0,0,.5) 0 10px 20px;
+		position: relative;
+		
+		}
+
+	#content {
+	
+		float: left;
+		clear: both;
+		width: 200%;
+		background: url('../images/shadow.png') repeat-x;
+		background-size: auto 5px;
+		-webkit-transition: margin-left .2s ease;
+
+		}
+		
+	.view {
+	
+		float: left;
+		width: 50%;
+		height: 100%;
+		position: relative;
+
+		}
+
+
+/* States */
+
+
+	body.note #content {
+	
+		margin-left: -100%;
+	
+		}
+		
+	/*	
+	body.note #content { margin-left: 0; }
+	.note #content { width: 100%; }
+	*/	
+		
+	body.note #notes {
+	
+		display: block;
+	
+		}
+		
+	body.single_column #note {
+	
+		display: none;
+	
+		}
+
+	body.single_column #content {
+	
+		width: 100%;
+	
+		}
+		
+	body.single_column .view {
+	
+		width: 100%;
+	
+		}
+			
+		
+/* Actions
+----------------------------------------------------------------------- */
+
+
+	.actions {
+	
+		float: left;
+		width: 100%;
+		background: url('../images/binding.png');
+		background-size: auto 36px;
+		border-bottom: 1px solid #333;
+		border-radius: 9px 9px 0 0;
+		-webkit-box-shadow: inset 0 0 3px 0 rgba(255,255,255,.24);
+
+		}
+		
+	.actions li {
+	
+		float: left;
+		
+		}
+		
+	.actions a {
+	
+		border: none;
+		display: block;
+		height: 34px;
+		width: 45px;
+		color: #222;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		opacity: .35;
+		
+		}
+		
+	.actions a:hover {
+	
+		opacity: .65;
+	
+		}
+			
+	.actions .selected a {
+	
+		opacity: 1 !important;
+	
+		}
+
+
+/* Icons */
+
+		
+	.actions .new a {
+	
+		background: url('../images/a-new.png') 20px center no-repeat;
+		background-size: 12px auto;
+
+		}
+		
+	.actions .refresh a {
+	
+		background: url('../images/a-refresh.png') 10px center no-repeat;
+		
+		}
+	
+	.actions .done a {
+	
+		background: url('../images/a-done.png') 20px center no-repeat;
+		background-size: 14px auto;
+		
+		}
+	
+	.actions .pin a {
+	
+		background: url('../images/a-pin.png') 10px center no-repeat;
+		background-size: 12px auto;
+
+		}		
+	
+	.actions .delete a {
+	
+		background: url('../images/a-delete.png') center center no-repeat;
+		background-size: 11px auto;
+		
+		}
+		
+		
+/* Exceptions */
+
+		
+	.actions .search,
+	.actions .delete {
+	
+		float: right;
+		margin-right: 4px;
+	
+		}
+		
+	.actions .delete {
+	
+		margin-right: 0;
+	
+		}
+		
+	body:not(.note) ul.actions .note,
+	body.note ul.actions .notes,
+	body.note.new ul.actions .erase,
+	.actions .sure {
+	
+		opacity: 0;
+		position: absolute;
+		z-index: -2;
+	
+		}
+		
+		
+/* Disabled */
+
+	
+	.actions .disabled a {
+	
+		opacity: .2 !important;
+	
+		}			
+		
+		
+/* SEARCH
+----------------------------------------------------------------------- */
+
+		
+	ul.actions .search {
+	
+		float: right;
+		width: 20%;
+		position: relative;
+		margin-right: 4px;
+		height: 27px;
+
+		}
+
+	.search input[type="text"] {
+	
+		float: right;
+		margin: 6px 1px 0 0;
+		width: 100%;
+		padding: 3px 22px;
+		font: bold 12px/12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		border: none;
+		outline: none;
+		color: #afafaf;
+		background: url('../images/magglass.png') 1px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(40,40,40)), to(rgb(60,60,60)));
+		background-size: 17px auto, auto auto !important;
+		border-radius: 20px;
+		-webkit-appearance: none;
+		border-bottom: 1px solid rgba(255,255,255, .2);
+	
+		}
+		
+	.search input:focus {
+	
+		background: url('../images/magglass.png') 1px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(20,20,20)), to(rgb(40,40,40)));
+	
+		}
+		
+	body .actions .search a {
+	
+		position: absolute;
+		top: 5px;
+		padding: 0;
+		right: 3px;
+		width: 20px;
+		height: 23px;
+		background: url('../images/a-clear.png') center center no-repeat !important;
+		background-size: 11px auto !important;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		opacity: .5;
+		display: none;
+	
+		}
+		
+	ul.actions .search a:active {
+
+		opacity: .8;
+	
+		}
+		
+	
+/* STATUS BAR
+----------------------------------------------------------------------- */
+
+	
+	#status {
+		
+		position: relative;
+		clear: both;
+		text-align: center;
+		height: 20px;
+		font-size: 10px;
+		line-height: 20px;
+		font-weight: bold;
+		color: #999;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding: 13px 20px 0;
+		background: url('../images/footer.png') repeat-x;
+		background-size: auto 13px;
+
+		}
+		
+	#status a {
+	
+		color: #9b0000;
+	
+		}
+		
+	#status a:hover {
+	
+		color: #e40000;
+	
+		}
+		
+	#info {
+	
+		position: absolute;
+		left: 10px;
+		top: 13px;
+		display: block;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		opacity: .5;
+		width: 13px;
+		height: 13px;
+		margin: 3px 0 0 7px;
+	
+		}
+	
+	#info div {
+	
+		background-size: 13px auto !important;
+	
+		}
+	
+	#resize {
+	
+		position: absolute;
+		display: block;
+		bottom: 0;
+		right: 0;
+		width: 22px;
+		height: 22px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('../images/a-resize.png') center center no-repeat;
+		background-size: 16px auto;
+		-apple-dashboard-region: dashboard-region(control rectangle);
+	
+		}
+		
+		
+/* LOADING
+----------------------------------------------------------------------- */
+
+	
+	#loading {
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('../images/spinner.gif') center center no-repeat, rgba(0,0,0,.35);
+		border-radius: 6px;
+
+		}
+		
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+		#loading {
+		
+			background-size: 16px auto;
+	
+			}
+	
+		}	
+		
+		
+/* PROMPT
+----------------------------------------------------------------------- */
+
+
+	.prompt {
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		z-index: -2;
+		opacity: 0;
+		text-shadow: rgba(0,0,0,.5) 0 -1px 0;
+		-webkit-transition: opacity .2s ease;
+
+		}
+		
+	.prompt.show {
+	
+		z-index: 2;
+		opacity: 1;
+	
+		}
+		
+	.prompt div {
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 170px;
+		margin: -40px 0 0 -95px;
+		padding: 5px 10px 6px;
+		color: #efefef;
+		border-radius: 4px;
+		-webkit-box-shadow: rgba(0,0,0,.8) 0 3px 25px;
+		-webkit-transition: margin-top .2s ease;
+
+		background: url('../images/background-back.png') center top;
+		background-size: 216px auto;
+
+		}
+		
+	.prompt.show div {
+	
+		margin-top: -50px;
+	
+		}
+		
+	.prompt h3 {
+	
+		font-size: 12px;
+		line-height: 16px;
+		margin-bottom: 5px;
+		border: none;
+		
+		}
+		
+		
+/* Actions */
+
+
+	.buttons {
+	
+		float: left;
+		width: 100%;
+		margin-bottom: 5px;
+	
+		}
+		
+	.buttons li {
+	
+		float: left;
+		width: 47.5%;
+		margin-right: 5%;
+	
+		}
+		
+	.buttons li:last-child {
+	
+		margin-right: 0;
+	
+		}
+		
+	.buttons a {
+	
+		display: block;
+		padding: 5px 0 5px 10%;
+		background: rgba(255,255,255,.2);
+		width: 90%;
+		border-radius: 3px;
+		font-weight: bold;
+		color: #fff;
+		background-repeat: no-repeat;
+
+		}
+		
+	.buttons a:hover {
+	
+		background-color: rgba(255,255,255,.3);
+	
+		}
+		
+	.buttons .cancel a {
+	
+		background-image: url('../images/a-cancel.png');
+		background-size: 11px auto;
+		background-position: 9px center;
+
+		}
+		
+	.buttons .delete a {
+	
+		background-image: url('../images/a-delete.png');
+		background-size: 11px auto;
+		background-position: 8px 6px;
+
+		}
+		
+		
+/* Update Notice
+----------------------------------------------------------------------- */
+		
+		
+	#update {
+	
+		display: block;
+		text-indent: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		width: 65px;
+		height: 27px;
+		background: url('../images/update.png');
+		background-size: 65px auto;
+		position: absolute;
+		top: 4px;
+		left: 50%;
+		margin-left: -45px;
+		opacity: .8;
+	
+		}
+		
+	#update:hover {
+	
+		opacity: 1;
+	
+		}
+		
+
+/* Scrollbars
+----------------------------------------------------------------------- */
+		
+		
+	::-webkit-scrollbar {
+		
+		width: 5px;
+		padding-right: 10px;
+		
+		}
+		
+	::-webkit-scrollbar-thumb:vertical {
+	
+		border-radius: 2px 0 0 2px;
+		background-color: rgba(0,0,0,.2);
+				
+		}
+		
+		
+/* Default Dimensions
+----------------------------------------------------------------------- */
+
+	
+	/*
+	textarea {
+	
+		width: 220px;
+		height: 235px;
+	
+		}
+		
+	ul.notes {
+	
+		height: 274px;
+	
+		}
+	
+	*/
+
+	
